@@ -1,7 +1,6 @@
 body {
     font-family: var(--font-family-body);
     background-color: var(--background);
-    padding: 0 16px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;

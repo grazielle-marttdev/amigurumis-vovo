@@ -4,3 +4,17 @@
 @import url('components/header.css');
 @import url('components/hero.css');
 @import url('components/products.css');
+
+/* Estilização de Botões */
+.btn {
+    background-color: var(--primary);
+    color: var(--warm-cream);
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--soft-terracota);
+}
