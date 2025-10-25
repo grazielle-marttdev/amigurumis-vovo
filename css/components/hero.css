@@ -1,8 +1,12 @@
 .hero-section {
     position: relative;
+    background: url('../../assets/images/bg-image-desktop.jpeg') no-repeat center 
+    center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 572px;
 }
 
 .bg-transparent {
@@ -11,10 +15,6 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-}
-
-.bg-image img {
-    z-index: -1;
 }
 
 .hero-content {
@@ -43,7 +43,7 @@
 
 .hero-content p {
     text-align: center;
-    color: var(--color-new);
+    color: var(--muted-clay);
     width: 328px;
     margin-bottom: 2rem;
 }
