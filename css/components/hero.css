@@ -30,6 +30,7 @@
 .hero-content h2 {
     font-family: var(--font-family-heading);
     font-size: 2.25rem;
+    text-align: center;
     color: var(--cozy-brown);
     margin-bottom: 0.8rem;
 }
@@ -44,10 +45,12 @@
 .hero-content p {
     text-align: center;
     color: var(--muted-clay);
-    width: 328px;
+    min-width: 272px;
+    width: 40%;
+    padding: 0 1.6rem;
     margin-bottom: 2rem;
 }
 
 .btn.hero {
-    width: 60%;
+    width: 240px;
 }
