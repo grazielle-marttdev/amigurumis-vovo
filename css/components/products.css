@@ -1,0 +1,74 @@
+.work-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.work-section .work-title {
+    font-family: var(--font-family-heading);
+    font-size: 1.875rem;
+    color: var(--cozy-brown);
+    margin-bottom: 1rem;
+}
+
+.work-section .work-subtitle {
+    text-align: center;
+    color: var(--muted-clay);
+    min-width: 272px;
+    width: 40%;
+    padding: 0 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--warm-cream);    
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    text-align: left;
+    padding: 1rem;
+}
+
+.card-title {
+    font-family: var(--font-family-heading);
+    font-size: 1.25rem;
+    color: var(--cozy-brown);
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: var(--muted-clay);
+    margin-bottom: 0.75rem;
+}
+
+.card-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--deep-moss);
+}
+
+.btn-container {
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+}
+
+.btn.card {
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 100%;
+}
