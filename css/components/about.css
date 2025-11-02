@@ -1,0 +1,24 @@
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem 1rem;
+}
+
+.about-img {
+    /* width: 100%; */
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+
+.about-title {
+    font-family: var(--font-family-heading);
+    font-size: 1.875rem;
+    text-align: left;
+    color: var(--cozy-brown);
+}
+
+.about-text {
+    color: var(--muted-clay);
+}
