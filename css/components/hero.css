@@ -1,7 +1,6 @@
 .hero-section {
     position: relative;
-    background: url('../../assets/images/bg-image-desktop.jpeg') no-repeat center 
-    center;
+    background: url('../../assets/images/bg-image-desktop.jpeg') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -27,7 +26,7 @@
     z-index: 2;
 }
 
-.hero-content h2 {
+.hero-content .hero-title {
     font-family: var(--font-family-heading);
     font-size: 2.25rem;
     text-align: center;
@@ -35,14 +34,14 @@
     margin-bottom: 0.8rem;
 }
 
-.hero-content span {
+.hero-content .hero-span {
     font-size: 1.25rem;
     font-weight: 500;
     color: var(--accent);
     margin-bottom: 1.5rem;
 }
 
-.hero-content p {
+.hero-content .hero-subtitle {
     text-align: center;
     color: var(--muted-clay);
     min-width: 272px;
