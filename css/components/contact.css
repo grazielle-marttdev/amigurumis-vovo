@@ -35,6 +35,26 @@
     color: var(--muted-clay);
 }
 
+.contact-info i {
+    color: var(--primary);
+}
+
+.contact-info .local {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info .social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info .social i {
+    font-size: 1rem;
+}
+
 .contact-info .social a {
     color: var(--muted-clay);
 }
