@@ -3,13 +3,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 4rem 1rem;
 }
 
 .contact-title {
-    font-family: var(--font-family-heading);
-    font-size: 1.875rem;
-    color: var(--cozy-brown);
 }
 
 .contact-subtitle {
@@ -19,7 +15,6 @@
 }
 
 .contact.btn {
-    font-weight: 500;
     padding: 0.8rem;
     max-width: 390px;
     width: 100%;
@@ -61,4 +56,26 @@
 
 .contact-info .social a:hover {
     color: var(--primary);
+}
+
+
+@media (min-width: 640px) {
+    .contact-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact.btn {
+        font-size: 1.125rem;
+        width: 284px;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        font-size: 1rem;
+    }
 }

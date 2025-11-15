@@ -9,6 +9,7 @@
 .btn {
     background-color: var(--primary);
     color: var(--warm-cream);
+    font-weight: 500;
     padding: 8px;
     border: none;
     border-radius: 10px;

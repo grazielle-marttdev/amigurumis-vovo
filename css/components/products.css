@@ -2,13 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem 0;
 }
 
 .work-section .work-title {
-    font-family: var(--font-family-heading);
-    font-size: 1.875rem;
-    color: var(--cozy-brown);
     margin-bottom: 1rem;
 }
 
@@ -25,17 +21,20 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
-    padding: 0 1rem;
+    width: 100%;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: var(--warm-cream);    
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
 }
 
 .card-content {
@@ -69,6 +68,41 @@
 
 .btn.card {
     font-size: 0.875rem;
-    font-weight: 500;
     width: 100%;
+}
+
+
+@media (min-width: 640px) {
+    .work-section .work-subtitle {
+        font-size: 1.125rem;
+        width: 80%;
+    }
+
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .work-section .work-title {
+        margin-bottom: 0.625rem;
+    }
+
+    .work-section .work-subtitle {
+        width: 500px;
+        margin-bottom: 3.75rem;
+    }
+
+    .work-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

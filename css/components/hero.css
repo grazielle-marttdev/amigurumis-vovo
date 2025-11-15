@@ -9,7 +9,7 @@
 }
 
 .bg-transparent {
-    background-color: hsla(43, 33%, 96%, 0.728);
+    background-color: hsla(28, 100%, 97%, 0.794);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -51,5 +51,63 @@
 }
 
 .btn.hero {
-    width: 240px;
+    width: 270px;
+}
+
+
+@media(min-width: 640px) {
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    .hero-content .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-content .hero-span {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 1.125rem;
+        width: 65%;
+        margin-bottom: 2.5rem;
+    }
+
+    .btn.hero {
+        font-size: 1.125rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (min-width: 660px) {
+    .hero-content .hero-subtitle {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-content .hero-title {
+        font-size: 3.75rem;
+    }
+
+    .hero-content .hero-span {
+        font-size: 1.875rem;
+    }
+
+    .hero-content .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        padding: 0 2rem;
+    }
+
+    .hero-content .hero-title {
+        font-size: 4.5rem;
+    }
 }
