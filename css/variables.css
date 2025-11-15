@@ -5,7 +5,6 @@
     --background: #F9F7F3;
     --foreground: #593D2E;
     --primary: #D86846;
-    --secondary: #6D9055;
     --accent: #945E38;
     --muted-clay: #997B66;
 
@@ -15,13 +14,10 @@
     --deep-moss: #4E7335;
     --cozy-brown: #593B26;
     --border-color: #E2DCCF;
+    --hover-color: #E2DCCF;
     --light-parchment: #E8DCD1;
 
     /* Tipografia */
     --font-family-heading: 'Playfair Display', serif;
     --font-family-body: 'Inter', sans-serif;
-
-    /* Dark mode */
-    --background-escuro: #2B1F16;
-    --primary-escuro: #E07855;
 }

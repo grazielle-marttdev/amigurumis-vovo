@@ -64,7 +64,7 @@
 }
 
 .nav-container ul li:hover a {
-    background-color: var(--border-color);
+    background-color: var(--hover-color);
     color: var(--primary);
 }
 
