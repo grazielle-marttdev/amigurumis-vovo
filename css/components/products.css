@@ -28,6 +28,7 @@
 .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: var(--warm-cream);    
     border-radius: 14px;
     overflow: hidden;
