@@ -9,9 +9,9 @@
 .btn {
     background-color: var(--primary);
     color: var(--warm-cream);
+    text-align: center;
     font-weight: 500;
     padding: 8px;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;

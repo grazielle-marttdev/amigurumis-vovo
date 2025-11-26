@@ -18,7 +18,7 @@
     padding: 0.625rem;
 }
 
-.header a {
+.header .nav-link, .header h1 a {
     color: var(--foreground);
 }
 
@@ -55,7 +55,7 @@
     padding: 1.5rem 0 3.5rem;
 }
 
-.nav-container ul li a {
+.nav-container ul li .nav-link {
     display: block;
     text-align: left;
     padding: 0.5rem 1rem;
@@ -63,7 +63,7 @@
     transition: 0.3s ease;
 }
 
-.nav-container ul li:hover a {
+.nav-container ul li:hover .nav-link {
     background-color: var(--hover-color);
     color: var(--primary);
 }
@@ -118,11 +118,11 @@
         padding: 0;
     }
 
-    .nav-container ul li a {
+    .nav-container ul li .nav-link {
         padding: 0;
     }
 
-    .nav-container ul li:hover a {
+    .nav-container ul li:hover .nav-link {
         background-color: transparent;
     }
 

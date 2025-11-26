@@ -22,7 +22,7 @@
                 <a href="/" title="Amigurumis da Vovó">Amigurumis da Vovó</a>
             </h1>
     
-            <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false">
+            <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav">
                 <i class="fa-solid fa-bars " alt="Abrir menu de navegação"></i>
                 <i class="fa-solid fa-xmark hide"></i>
             </button>
@@ -30,11 +30,11 @@
 
         <nav class="nav-container hide" id="main-nav">
             <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
                 <li>
-                    <button class="btn whatsapp header">Whatsapp</button>
+                    <a class="btn whatsapp header" target="_blank"">Whatsapp</a>
                 </li>
             </ul>
         </nav>
@@ -49,12 +49,12 @@
                 <h2 class="hero-title">Amigurumis da Vovó</h2>
                 <span class="hero-span">Carinho em cada ponto</span>
                 <p class="hero-subtitle">Feitos à mão por Antônia. Peças únicas para presentear quem você ama.</p>
-                <button class="btn whatsapp hero">Pedir pelo Whatsapp</button>
+                <a class="btn whatsapp hero" target="_blank">Pedir pelo Whatsapp</a>
             </div>
         </section>
 
         <!-- Seção Trabalhos -->
-        <section class="work-section section" id="trabalhos">
+        <section class="work-section section" id="produtos">
             <h2 class="work-title section-title">Trabalhos da Vovó</h2>
             <p class="work-subtitle">Cada amigurumi é feito com carinho e atenção aos detalhes. Peças únicas que trazem alegria e afeto.</p>
 
@@ -82,7 +82,7 @@
             <h2 class="contact-title section-title">Vamos conversar?</h2>
             <p class="contact-subtitle">Cada peça pode ser personalizada com as cores e detalhes que você preferir. Entre em contato e vamos criar algo especial juntos!</p>
 
-            <button class="btn whatsapp contact">Chamar no Whatsapp</button>
+            <a class="btn whatsapp contact" target="_blank">Chamar no Whatsapp</a>
 
             <div class="contact-info">
                 <div class="local">
@@ -105,6 +105,8 @@
     </footer>
 </body>
 
+<script src="./js/menu.js"></script>
+<script src="./js/whatsapp.js"></script>
 <script type="module" src="./js/main.js"></script>
 
 </html>
