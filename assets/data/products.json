@@ -1,58 +1,58 @@
 [
     {
-        "nome": "Coelhinho Azul",
-        "descricao": "Um amigurumi fofo feito com algodão macio.",
+        "nome": "Coelhinha Luna",
+        "descricao": "Coelhinha delicada com orelhinhas longas e roupinha rosada.",
         "preco": "45,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-coelhinha.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
     },
     {
-        "nome": "Polvinho da Calma",
-        "descricao": "Pequeno e reconfortante, ótimo para presentear.",
+        "nome": "Nossa Senhora Aparecida",
+        "descricao": "Uma peça especial de devoção, com manto azul e detalhes dourados. Ideal para presentear ou decorar com fé e carinho.",
         "preco": "35,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-nossa-senhora.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511988888888"
     },
     {
-        "nome": "Gatinho Cinza",
-        "descricao": "Inspirado em um filhote real, com detalhes delicados.",
+        "nome": "Gatinho Sol",
+        "descricao": "Gatinho laranja listrado com olhinhos verdes brilhantes.",
         "preco": "50,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-gato.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511977777777"
     },
     {
         "nome": "Raposinha Adormecida",
         "descricao": "Uma raposa serena, com olhos fechados e pelagem detalhada. Excelente para decoração e como companhia suave.",
-        "preco": "65,00",
-        "imagem": "https://placehold.co/270x360",
+        "preco": "55,00",
+        "imagem": "../assets/images/produto-raposa.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511966666666"
     },
     {
         "nome": "Dinossaurinho Verde",
         "descricao": "Um pequeno dinossauro em tom verde-musgo. Ideal para crianças curiosas e adultos que não perderam o encanto.",
-        "preco": "58,00",
-        "imagem": "https://placehold.co/270x360",
+        "preco": "38,00",
+        "imagem": "../assets/images/produto-dinossauro.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511955555555"
     },
     {
         "nome": "Pinguim Elegante",
         "descricao": "Com um cachecol vermelho e expressão charmosa.",
         "preco": "49,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-pinguim.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511944444444"
     },
     {
         "nome": "Suculentinha Amigurumi",
         "descricao": "Perfeita para quem ama plantas, mas não quer regar nada.",
         "preco": "30,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-suculenta.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511933333333"
     },
     {
-        "nome": "Urso Mel",
-        "descricao": "Um ursinho marrom-claro com laço de cetim amarelo.",
+        "nome": "Ursinho Mel",
+        "descricao": "Ursinho fofo em tons de marrom e creme, perfeito para abraçar.",
         "preco": "55,00",
-        "imagem": "https://placehold.co/270x360",
+        "imagem": "../assets/images/produto-ursinho.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511922222222"
     }
 ]
