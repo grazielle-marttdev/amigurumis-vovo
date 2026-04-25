@@ -1,49 +1,117 @@
 # Amigurumis da Vovó
 
-Um protótipo de site de e-commerce para a venda de amigurumis, desenvolvido com o objetivo de criar um projeto prático e que pudesse ser aplicado em um cenário real. O tema de crochê foi escolhido para dar vida a essa ideia.
+Landing page responsiva para divulgação e venda de amigurumis artesanais. O projeto nasceu inicialmente como um protótipo desenvolvido durante o Projeto Integrado Inovação da faculdade Anhanguera e, desde então, vem sendo expandido e refinado como parte do meu portfólio.
 
-Este projeto foi uma excelente oportunidade para aplicar e aprofundar conhecimentos em desenvolvimento front-end, especialmente em:
+O projeto apresenta um catálogo de produtos renderizado dinamicamente a partir de um arquivo JSON, seções institucionais e pontos de contato via WhatsApp. A base atual está sendo preparada para evoluir com melhorias de acessibilidade, documentação, API, banco de dados e painel administrativo.
 
-- **Organização de arquivos e pastas** para facilitar a manutenção e escalabilidade do código.
-- **Aplicação de conceitos de JavaScript**, como a criação de classes para gerar componentes dinamicamente.
+## Visão Geral
 
-## ✨ Funcionalidades
+- Catálogo de produtos carregado dinamicamente com JavaScript
+- Navegação responsiva com menu mobile
+- Botões de contato via WhatsApp
+- Estrutura pensada para evolução em fases, documentadas no roadmap
 
-- **Catálogo Dinâmico:** Os produtos são carregados de um arquivo `products.json`, permitindo fácil gerenciamento.
-- **Design Responsivo:** A interface se adapta a diferentes tamanhos de tela.
-- **Contato via WhatsApp:** Cada produto possui um botão que direciona o cliente para uma conversa no WhatsApp.
-- **Conteúdo Gerado por IA:** Para criar um protótipo visualmente rico e polido, todo o conteúdo de texto (como a história da seção "Sobre") e as imagens dos produtos foram gerados por inteligência artificial.
+## Tecnologias Utilizadas
 
-## 🚀 Tecnologias Utilizadas
+- `HTML5` para a estrutura da página
+- `CSS3` organizado em arquivos base, utilitários, variáveis e componentes
+- `JavaScript` modular no front-end, incluindo carregamento de dados e criação dinâmica dos cards
+- `JSON` como fonte de dados temporária para os produtos
+- `Font Awesome` para ícones da interface
+- `Google Fonts` para tipografia
 
-- **HTML5:** Para a estrutura semântica do site.
-- **CSS3:** Para a estilização, com foco em uma estrutura organizada e de fácil manutenção.
-- **JavaScript (Vanilla):** Para a manipulação do DOM e toda a interatividade da página.
+## Arquitetura Atual
 
-## 📂 Estrutura do Projeto
+O projeto segue uma organização simples de front-end estático:
 
-A organização de pastas foi pensada para separar as responsabilidades e facilitar a manutenção:
+- `index.html` concentra a estrutura principal da página
+- `css/variables.css` define tokens visuais como cores e tipografia
+- `css/base.css` e `css/utilities.css` concentram estilos globais
+- `css/components.css` importa os estilos dos componentes da interface
+- `js/main.js` carrega os produtos e renderiza os cards na página
+- `js/classes.js` encapsula a criação dos elementos de produto
+- `js/menu.js` controla a navegação mobile
+- `js/whatsapp.js` lida com os links de contato
+- `assets/data/products.json` funciona como fonte de dados atual do catálogo
 
+## Responsividade
+
+O layout foi construído com abordagem mobile-first e ajustado com media queries para telas maiores. A estrutura visual prioriza a experiência em dispositivos móveis sem perder legibilidade e organização em desktop.
+
+## Estrutura do Projeto
+
+```text
+assets/
+|-- data/
+|   `-- products.json
+|-- images/
+css/
+|-- base.css
+|-- components.css
+|-- reset.css
+|-- utilities.css
+|-- variables.css
+`-- components/
+    |-- about.css
+    |-- contact.css
+    |-- footer.css
+    |-- header.css
+    |-- hero.css
+    `-- products.css
+js/
+|-- classes.js
+|-- main.js
+|-- menu.js
+`-- whatsapp.js
+index.html
+ROADMAP.md
 ```
-├───assets/
-│   ├───data/
-│   │   └───products.json   # Dados dos produtos
-│   └───images/             # Imagens dos produtos
-├───css/
-│   ├───base.css
-│   ├───components/         # Estilos de componentes específicos
-│   └───...
-├───js/
-│   ├───classes.js          # Classes para a criação de elementos
-│   ├───main.js             # Lógica principal de carregamento
-│   └───...
-└───index.html
+
+## Como Executar
+
+Como o catálogo é carregado com `fetch()` a partir de `assets/data/products.json`, o projeto deve ser servido por um servidor local. Abrir o `index.html` diretamente no navegador pode falhar dependendo das restrições do ambiente.
+
+Você pode usar qualquer servidor estático simples. Exemplos:
+
+```bash
+npx serve .
 ```
 
-## 🏃‍♀️ Como Executar
+ou, se preferir a extensão Live Server no VS Code, basta iniciar o projeto por ela.
 
-Por ser um projeto estático (front-end puro), basta abrir o arquivo `index.html` em qualquer navegador web.
+Depois, abra no navegador o endereço exibido pelo servidor local.
+
+## Estado Atual
+
+Neste momento, o projeto funciona como um front-end estático com dados locais. As próximas melhorias incluem:
+
+- refino de semântica e acessibilidade
+- revisão da documentação
+- migração do catálogo para API + PostgreSQL
+- carrinho e registro de pedidos
+- painel administrativo com autenticação
+
+## Uso de IA no Processo
+
+A inteligência artificial tem sido usada como apoio prático durante a evolução do projeto, especialmente para:
+
+- revisar possibilidades de refatoração
+- identificar melhorias de semântica e acessibilidade
+- esclarecer decisões de estrutura e organização do código
+- acelerar o processo de aprendizado e evolução técnica
+
+Esse apoio tem sido importante para tornar o desenvolvimento mais consciente e iterativo, ajudando a transformar o protótipo inicial em uma base mais sólida.
+
+## Em Desenvolvimento
+
+O plano de evolução do projeto está documentado em [ROADMAP.md](./ROADMAP.md).
+
+## Observações
+
+- Parte do conteúdo visual e textual foi gerada com apoio de IA para fins de prototipação
+- A IA também vem sendo utilizada como apoio técnico no processo de revisão e melhoria do projeto
+- O projeto ainda está em fase de melhoria estrutural antes da expansão para back-end
 
 ---
 
-Feito com ❤️ para o portfólio.
+Projeto desenvolvido para portfólio 💻✨☕
