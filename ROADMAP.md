@@ -12,8 +12,8 @@
 
 ### ♻️ Refatoração do front-end atual
 
-- [ ] Refatorar o menu mobile para que a estrutura HTML e o comportamento em JavaScript sejam mais semânticos e fáceis de manter
-- [ ] Garantir que o estado do menu esteja centralizado em atributos e classes consistentes, sem depender apenas da troca visual de ícones
+- [X] Refatorar o menu mobile para que a estrutura HTML e o comportamento em JavaScript sejam mais semânticos e fáceis de manter
+- [X] Garantir que o estado do menu esteja centralizado em atributos e classes consistentes, sem depender apenas da troca visual de ícones
 - [ ] Revisar trechos de JS com responsabilidade ambígua e separar melhor o que é renderização, comportamento e integração com links externos
 - [ ] Identificar repetições ou acoplamentos desnecessários que possam virar funções ou módulos mais claros
 
@@ -49,10 +49,10 @@
 ### 📄 Documentação
 
 - [ ] Atualizar o `README.md` para refletir o estado real do projeto
-- [ ] Corrigir instruções de execução para o comportamento real do front-end atual
-- [ ] Mencionar com mais precisão a arquitetura atual (HTML, CSS organizado por camadas/componentes e JavaScript modular)
-- [ ] Adicionar uma seção "Em desenvolvimento" apontando para este roadmap
-- [ ] Publicar este `ROADMAP.md` no repositório
+- [X] Corrigir instruções de execução para o comportamento real do front-end atual
+- [X] Mencionar com mais precisão a arquitetura atual (HTML, CSS organizado por camadas/componentes e JavaScript modular)
+- [X] Adicionar uma seção "Em desenvolvimento" apontando para este roadmap
+- [X] Publicar este `ROADMAP.md` no repositório
 
 ---
 

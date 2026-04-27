@@ -22,19 +22,19 @@
                 <a href="/" title="Amigurumis da Vovó">Amigurumis da Vovó</a>
             </h1>
     
-            <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav">
-                <i class="fa-solid fa-bars " alt="Abrir menu de navegação"></i>
+            <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <i class="fa-solid fa-bars "></i>
                 <i class="fa-solid fa-xmark hide"></i>
             </button>
         </div>
 
-        <nav class="nav-container hide" id="main-nav">
+        <nav class="nav-container hide" id="main-nav" aria-label="Menu de navegação principal">
             <ul>
-                <li><a href="#produtos" class="nav-link">Produtos</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#produtos" class="nav-link" aria-label="Ir para a seção de produtos">Produtos</a></li>
+                <li><a href="#sobre" class="nav-link" aria-label="Ir para a seção sobre">Sobre</a></li>
+                <li><a href="#contato" class="nav-link" aria-label="Ir para a seção contato">Contato</a></li>
                 <li>
-                    <a class="btn whatsapp header" target="_blank"">Whatsapp</a>
+                    <a class="btn whatsapp header" target="_blank" aria-label="Chamar no Whatsapp">Whatsapp</a>
                 </li>
             </ul>
         </nav>
