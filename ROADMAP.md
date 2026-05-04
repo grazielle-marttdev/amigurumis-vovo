@@ -14,8 +14,8 @@
 
 - [X] Refatorar o menu mobile para que a estrutura HTML e o comportamento em JavaScript sejam mais semânticos e fáceis de manter
 - [X] Garantir que o estado do menu esteja centralizado em atributos e classes consistentes, sem depender apenas da troca visual de ícones
-- [ ] Revisar trechos de JS com responsabilidade ambígua e separar melhor o que é renderização, comportamento e integração com links externos
-- [ ] Identificar repetições ou acoplamentos desnecessários que possam virar funções ou módulos mais claros
+- [X] Revisar trechos de JS com responsabilidade ambígua e separar melhor o que é renderização, comportamento e integração com links externos
+- [X] Identificar repetições ou acoplamentos desnecessários que possam virar funções ou módulos mais claros
 
 ### ♿ Acessibilidade (a11y)
 
@@ -24,20 +24,20 @@
 
 #### Navegação e menu
 
-- [ ] Garantir que o botão do menu tenha nome acessível e informe corretamente seu estado expandido/recolhido
-- [ ] Verificar se a navegação mobile funciona bem com teclado e leitores de tela
+- [X] Garantir que o botão do menu tenha nome acessível e informe corretamente seu estado expandido/recolhido
+- [X] Verificar se a navegação mobile funciona bem com teclado e leitores de tela
 - [ ] Revisar o comportamento de abertura e fechamento do menu para não depender apenas de elementos visuais
 
 #### Semântica e estrutura
 
-- [ ] Revisar se todos os elementos interativos usam a tag correta (`<button>`, `<a>`, etc.)
-- [ ] Confirmar que a hierarquia de headings continua lógica e sem saltos desnecessários
-- [ ] Substituir containers genéricos por elementos semânticos quando isso melhorar a estrutura do documento
+- [X] Revisar se todos os elementos interativos usam a tag correta (`<button>`, `<a>`, etc.)
+- [X] Confirmar que a hierarquia de headings continua lógica e sem saltos desnecessários
+- [x] Substituir containers genéricos por elementos semânticos quando isso melhorar a estrutura do documento
 
 #### Links, foco e interação
 
-- [ ] Garantir que links importantes já existam com `href` válido no HTML, sem depender do clique para se tornarem funcionais
-- [ ] Verificar se todos os elementos interativos são utilizáveis via teclado (`Tab`, `Enter`, `Space`)
+- [X] Garantir que links importantes já existam com `href` válido no HTML, sem depender do clique para se tornarem funcionais
+- [X] Verificar se todos os elementos interativos são utilizáveis via teclado (`Tab`, `Enter`, `Space`)
 - [ ] Garantir foco visível e ordem de navegação coerente em toda a página
 
 #### Conteúdo visual
