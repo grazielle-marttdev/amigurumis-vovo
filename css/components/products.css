@@ -104,7 +104,9 @@
         width: 500px;
         margin-bottom: 3.75rem;
     }
+}
 
+@media (min-width: 992px) {
     .work-gallery {
         grid-template-columns: repeat(3, 1fr);
     }

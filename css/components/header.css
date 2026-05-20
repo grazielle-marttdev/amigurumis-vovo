@@ -69,6 +69,8 @@
 
 .nav-container ul li .nav-link {
     display: block;
+    font-size: 1rem;
+    font-weight: 500;
     text-align: left;
     padding: 0.5rem 1rem;
     border-radius: 12px;
@@ -87,7 +89,7 @@
 }
 
 .btn.header {
-    font-size: 14px;
+    font-size: 1rem;
     width: 86%;
 }
 
@@ -118,10 +120,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: transparent;
         box-shadow: none;
         padding-top: 0.5rem;
-        backdrop-filter: blur(8px);
     }
 
     .nav-container {
