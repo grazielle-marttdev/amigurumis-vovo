@@ -26,7 +26,7 @@
 
 - [X] Garantir que o botão do menu tenha nome acessível e informe corretamente seu estado expandido/recolhido
 - [X] Verificar se a navegação mobile funciona bem com teclado e leitores de tela
-- [ ] Revisar o comportamento de abertura e fechamento do menu para não depender apenas de elementos visuais
+- [X] Revisar o comportamento de abertura e fechamento do menu para não depender apenas de elementos visuais
 
 #### Semântica e estrutura
 
@@ -38,13 +38,13 @@
 
 - [X] Garantir que links importantes já existam com `href` válido no HTML, sem depender do clique para se tornarem funcionais
 - [X] Verificar se todos os elementos interativos são utilizáveis via teclado (`Tab`, `Enter`, `Space`)
-- [ ] Garantir foco visível e ordem de navegação coerente em toda a página
+- [X] Garantir foco visível e ordem de navegação coerente em toda a página
 
 #### Conteúdo visual
 
-- [ ] Revisar textos alternativos das imagens para manter descrições úteis e contextuais
-- [ ] Confirmar que imagens decorativas sejam ignoradas corretamente por tecnologias assistivas
-- [ ] Verificar contraste de cores e garantir que nenhuma informação seja comunicada apenas por cor
+- [X] Revisar textos alternativos das imagens para manter descrições úteis e contextuais
+- [X] Confirmar que imagens decorativas sejam ignoradas corretamente por tecnologias assistivas
+- [X] Verificar contraste de cores e garantir que nenhuma informação seja comunicada apenas por cor
 
 ### 📄 Documentação
 
