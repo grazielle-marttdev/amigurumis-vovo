@@ -2,6 +2,7 @@
     {
         "nome": "Coelhinha Luna",
         "descricao": "Coelhinha delicada com orelhinhas longas e roupinha rosada.",
+        "alt": "Amigurumi de coelinha branca com roupa rosa.",
         "preco": "45,00",
         "imagem": "assets/images/produto-coelhinha.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -9,6 +10,7 @@
     {
         "nome": "Nossa Senhora Aparecida",
         "descricao": "Uma peça especial de devoção, com manto azul e detalhes dourados. Ideal para presentear ou decorar com fé e carinho.",
+        "alt": "Amigurumi de Nossa Senhora Aparecida com manto azul e detalhes dourados.",
         "preco": "35,00",
         "imagem": "assets/images/produto-nossa-senhora.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -16,6 +18,7 @@
     {
         "nome": "Gatinho Sol",
         "descricao": "Gatinho laranja listrado com olhinhos verdes brilhantes.",
+        "alt": "Amigurumi de gatinho laranja listrado com olhos verdes.",
         "preco": "50,00",
         "imagem": "assets/images/produto-gato.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -23,6 +26,7 @@
     {
         "nome": "Raposinha Adormecida",
         "descricao": "Uma raposa serena, com olhos fechados e pelagem detalhada. Excelente para decoração e como companhia suave.",
+        "alt": "Amigurumi de raposa com olhos fechados e pelagem detalhada.",
         "preco": "55,00",
         "imagem": "assets/images/produto-raposa.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -30,6 +34,7 @@
     {
         "nome": "Dinossaurinho Verde",
         "descricao": "Um pequeno dinossauro em tom verde-musgo. Ideal para crianças curiosas e adultos que não perderam o encanto.",
+        "alt": "Amigurumi de pequeno dinossauro em tom verde-musgo.",
         "preco": "38,00",
         "imagem": "assets/images/produto-dinossauro.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -37,6 +42,7 @@
     {
         "nome": "Pinguim Elegante",
         "descricao": "Com um cachecol vermelho e expressão charmosa.",
+        "alt": "Amigurumi de pinguim com cachecol vermelho e expressão charmosa.",
         "preco": "49,00",
         "imagem": "assets/images/produto-pinguim.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -44,6 +50,7 @@
     {
         "nome": "Suculentinha Amigurumi",
         "descricao": "Perfeita para quem ama plantas, mas não quer regar nada.",
+        "alt": "Amigurumi de pequena suculenta verde em um vaso",
         "preco": "30,00",
         "imagem": "assets/images/produto-suculenta.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"
@@ -51,6 +58,7 @@
     {
         "nome": "Ursinho Mel",
         "descricao": "Ursinho fofo em tons de marrom e creme, perfeito para abraçar.",
+        "alt": "Amigurumi de ursinho fofinho em tons de marrom e creme.",
         "preco": "55,00",
         "imagem": "assets/images/produto-ursinho.jpeg",
         "whatsapp": "https://api.whatsapp.com/send?phone=5511999999999"

@@ -8,6 +8,7 @@ function openMenu() {
     openIcon.classList.add('hide');
     closeIcon.classList.remove('hide');
     btnMenuToggle.setAttribute('aria-expanded', 'true');
+    btnMenuToggle.setAttribute('aria-label', 'Fechar menu de navegação');
 }
 
 function closeMenu() {
@@ -15,6 +16,7 @@ function closeMenu() {
     openIcon.classList.remove('hide');
     closeIcon.classList.add('hide');
     btnMenuToggle.setAttribute('aria-expanded', 'false');
+    btnMenuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
 }
 
 function toggleMenu() {

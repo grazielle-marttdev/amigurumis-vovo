@@ -4,6 +4,7 @@ class cardProdutos {
         this.img = produto.imagem;
         this.nome = produto.nome;
         this.desc = produto.descricao;
+        this.alt = produto.alt;
         this.preco = produto.preco;
         this.link = produto.whatsapp;
     }
@@ -16,14 +17,14 @@ class cardProdutos {
         // Criar imagem
         const imagem = document.createElement('img');
         imagem.src = this.img;
-        imagem.alt = this.nome;
+        imagem.alt = this.alt;
 
         // Criar conteúdo do card
         const conteudo = document.createElement('div');
         conteudo.classList.add('card-content');
 
         conteudo.innerHTML = `
-            <h2 class="card-title">${this.nome}</h2>
+            <h3 class="card-title">${this.nome}</h3>
             <p class="card-description">${this.desc}</p>
             <span class="card-price">R$ ${this.preco}</span>
         `;
