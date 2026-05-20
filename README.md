@@ -2,13 +2,14 @@
 
 Landing page responsiva para divulgação e venda de amigurumis artesanais. O projeto nasceu inicialmente como um protótipo desenvolvido durante o Projeto Integrado Inovação da faculdade Anhanguera e, desde então, vem sendo expandido e refinado como parte do meu portfólio.
 
-O projeto apresenta um catálogo de produtos renderizado dinamicamente a partir de um arquivo JSON, seções institucionais e pontos de contato via WhatsApp. A base atual está sendo preparada para evoluir com melhorias de acessibilidade, documentação, API, banco de dados e painel administrativo.
+O projeto apresenta um catálogo de produtos renderizado dinamicamente a partir de um arquivo JSON, seções institucionais e pontos de contato via WhatsApp. A base atual já passou por uma rodada de refino em semântica, acessibilidade e organização do front-end, e agora está sendo preparada para evoluir com API, banco de dados e painel administrativo.
 
 ## Visão Geral
 
 - Catálogo de produtos carregado dinamicamente com JavaScript
 - Navegação responsiva com menu mobile
 - Botões de contato via WhatsApp
+- Foco visível, contraste revisado e textos alternativos mais descritivos
 - Estrutura pensada para evolução em fases, documentadas no roadmap
 
 ## Tecnologias Utilizadas
@@ -29,9 +30,8 @@ O projeto segue uma organização simples de front-end estático:
 - `css/base.css` e `css/utilities.css` concentram estilos globais
 - `css/components.css` importa os estilos dos componentes da interface
 - `js/main.js` carrega os produtos e renderiza os cards na página
-- `js/classes.js` encapsula a criação dos elementos de produto
-- `js/menu.js` controla a navegação mobile
-- `js/whatsapp.js` lida com os links de contato
+- `js/classes.js` encapsula a criação dos elementos de produto, incluindo textos alternativos das imagens
+- `js/menu.js` controla a navegação mobile com atributos de acessibilidade
 - `assets/data/products.json` funciona como fonte de dados atual do catálogo
 
 ## Responsividade
@@ -61,8 +61,7 @@ css/
 js/
 |-- classes.js
 |-- main.js
-|-- menu.js
-`-- whatsapp.js
+`-- menu.js
 index.html
 ROADMAP.md
 ```
@@ -83,10 +82,8 @@ Depois, abra no navegador o endereço exibido pelo servidor local.
 
 ## Estado Atual
 
-Neste momento, o projeto funciona como um front-end estático com dados locais. As próximas melhorias incluem:
+Neste momento, o projeto funciona como um front-end estático com dados locais, já com melhorias recentes de semântica, acessibilidade e contraste visual. As próximas melhorias incluem:
 
-- refino de semântica e acessibilidade
-- revisão da documentação
 - migração do catálogo para API + PostgreSQL
 - carrinho e registro de pedidos
 - painel administrativo com autenticação

@@ -48,7 +48,7 @@
 
 ### 📄 Documentação
 
-- [ ] Atualizar o `README.md` para refletir o estado real do projeto
+- [X] Atualizar o `README.md` para refletir o estado real do projeto
 - [X] Corrigir instruções de execução para o comportamento real do front-end atual
 - [X] Mencionar com mais precisão a arquitetura atual (HTML, CSS organizado por camadas/componentes e JavaScript modular)
 - [X] Adicionar uma seção "Em desenvolvimento" apontando para este roadmap
