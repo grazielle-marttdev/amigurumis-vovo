@@ -1,0 +1,29 @@
+{
+  "name": "amigurumis-vovo",
+  "version": "1.0.0",
+  "description": "Landing page responsiva para divulgação e venda de amigurumis artesanais. O projeto nasceu inicialmente como um protótipo desenvolvido durante o Projeto Integrado Inovação da faculdade Anhanguera e, desde então, vem sendo expandido e refinado como parte do meu portfólio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grazielle-marttdev/amigurumis-vovo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/grazielle-marttdev/amigurumis-vovo/issues"
+  },
+  "homepage": "https://github.com/grazielle-marttdev/amigurumis-vovo#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
