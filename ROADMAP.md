@@ -62,17 +62,17 @@
 
 ### 🛠️ Ambiente e configuração
 
-- [ ] Instalar Node.js (se ainda não tiver)
-- [ ] Inicializar projeto Node com `npm init`
-- [ ] Instalar dependências: `express`, `pg`, `dotenv`
-- [ ] Criar arquivo `.env` com as variáveis de conexão (e adicionar ao `.gitignore`!)
-- [ ] Instalar e configurar PostgreSQL localmente
+- [X] Instalar Node.js (se ainda não tiver)
+- [X] Inicializar projeto Node com `npm init`
+- [X] Instalar dependências: `express`, `pg`, `dotenv`
+- [X] Criar arquivo `.env` com as variáveis de conexão (e adicionar ao `.gitignore`!)
+- [X] Instalar e configurar PostgreSQL localmente
 
 ### 🗄️ Banco de dados
 
-- [ ] Criar banco de dados `amigurumis_db`
-- [ ] Definir uma estratégia de versionamento do banco (`schema.sql`, migrations ou ambos)
-- [ ] Criar tabela `products` com os campos adequados:
+- [X] Criar banco de dados `amigurumis_db`
+- [X] Definir uma estratégia de versionamento do banco (`schema.sql`, migrations ou ambos)
+- [X] Criar tabela `products` com os campos adequados:
   - `id` (serial / primary key)
   - `name`
   - `description`
@@ -81,8 +81,8 @@
   - `is_active`
   - `created_at`
   - `updated_at`
-- [ ] Popular a tabela com os produtos que estão no `products.json` atual
-- [ ] Versionar a estrutura inicial do banco no repositório para facilitar recriação do ambiente
+- [X] Popular a tabela com os produtos que estão no `products.json` atual
+- [X] Versionar a estrutura inicial do banco no repositório para facilitar recriação do ambiente
 
 ### 🔌 API REST
 
