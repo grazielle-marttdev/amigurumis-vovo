@@ -1,3 +1,7 @@
+-- Esse schema basicamente armazena os comandos que você usou lá no seu banco de dados
+-- Se um dia precisar relembrar ou mostrar para alguém os comandos que foram executados, você tem esse arquivo como seu aliado. 
+
+
 -- Função para atualizar o campo updated_at automaticamente
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
