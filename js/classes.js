@@ -1,12 +1,11 @@
 class cardProdutos {
     constructor(produto) {
         // guarda as informações
-        this.img = produto.imagem;
-        this.nome = produto.nome;
-        this.desc = produto.descricao;
+        this.img = produto.image_url;
+        this.nome = produto.name;
+        this.desc = produto.description;
         this.alt = produto.alt;
-        this.preco = produto.preco;
-        this.link = produto.whatsapp;
+        this.preco = produto.price;
     }
 
     gerarElemento() {
@@ -26,20 +25,31 @@ class cardProdutos {
         conteudo.innerHTML = `
             <h3 class="card-title">${this.nome}</h3>
             <p class="card-description">${this.desc}</p>
-            <span class="card-price">R$ ${this.preco}</span>
         `;
 
-        // Criar o botão de Whatsapp
+        // Criar o botão de Whatsapp e o contêiner
         const botaoContainer = document.createElement('div');
         botaoContainer.classList.add('btn-container');
 
+        // Criar o elemento do preço e colocar no botão container
+        const precoSpan = document.createElement('span');
+        precoSpan.classList.add('card-price');
+        precoSpan.innerText = `R$ ${this.preco}`;
+
+        // Colocando o preço dentro do contêiner antes do botão
+        botaoContainer.appendChild(precoSpan);
+
+        // Configurando o link do Whatsapp
+        const numeroLoja = "5511999999999";
+        const textoMensagem = `Olá, tenho interesse no amigurumi ${this.nome}!`
+
         const link = document.createElement('a');
-        link.href = this.link;
+        link.href = `https://api.whatsapp.com/send?phone=${numeroLoja}&text=${encodeURIComponent(textoMensagem)}`
         link.target = "_blank";
         link.classList.add('btn', 'card');
-
         link.textContent = "Quero esse amigurumi";
 
+        // Colocando o botão dentro do contêiner também
         botaoContainer.appendChild(link);
 
         // Montar o card final
