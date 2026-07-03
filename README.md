@@ -2,102 +2,102 @@
 
 Landing page responsiva para divulgação e venda de amigurumis artesanais. O projeto nasceu inicialmente como um protótipo desenvolvido durante o Projeto Integrado Inovação da faculdade Anhanguera e, desde então, vem sendo expandido e refinado como parte do meu portfólio.
 
-O projeto apresenta um catálogo de produtos renderizado dinamicamente a partir de um arquivo JSON, seções institucionais e pontos de contato via WhatsApp. A base atual já passou por uma rodada de refino em semântica, acessibilidade e organização do front-end, e agora está sendo preparada para evoluir com API, banco de dados e painel administrativo.
+O projeto apresenta um catálogo de produtos renderizado dinamicamente consumindo uma API própria em Node.js integrada a um banco de dados PostgreSQL. Possui também seções institucionais e pontos de contato via WhatsApp. 
 
 ## Visão Geral
 
-- Catálogo de produtos carregado dinamicamente com JavaScript
+- Catálogo de produtos carregado dinamicamente consumindo uma API REST
+- Banco de dados relacional para gerenciamento dos produtos
 - Navegação responsiva com menu mobile
 - Botões de contato via WhatsApp
-- Foco visível, contraste revisado e textos alternativos mais descritivos
+- Foco visível, contraste revisado e textos alternativos descritivos
 - Estrutura pensada para evolução em fases, documentadas no roadmap
 
 ## Tecnologias Utilizadas
 
+**Front-end:**
 - `HTML5` para a estrutura da página
 - `CSS3` organizado em arquivos base, utilitários, variáveis e componentes
-- `JavaScript` modular no front-end, incluindo carregamento de dados e criação dinâmica dos cards
-- `JSON` como fonte de dados temporária para os produtos
+- `JavaScript` modular, carregando dados da API e renderizando cards
 - `Font Awesome` para ícones da interface
 - `Google Fonts` para tipografia
 
+**Back-end e Banco de Dados:**
+- `Node.js` com `Express` para a criação da API REST
+- `PostgreSQL` como banco de dados relacional
+- `pg` (node-postgres) para conectar a aplicação ao banco de dados
+
 ## Arquitetura Atual
 
-O projeto segue uma organização simples de front-end estático:
+O projeto agora é full-stack, dividido de forma simples:
 
-- `index.html` concentra a estrutura principal da página
-- `css/variables.css` define tokens visuais como cores e tipografia
-- `css/base.css` e `css/utilities.css` concentram estilos globais
-- `css/components.css` importa os estilos dos componentes da interface
-- `js/main.js` carrega os produtos e renderiza os cards na página
-- `js/classes.js` encapsula a criação dos elementos de produto, incluindo textos alternativos das imagens
-- `js/menu.js` controla a navegação mobile com atributos de acessibilidade
-- `assets/data/products.json` funciona como fonte de dados atual do catálogo
+**Back-end:**
+- `server.js`: Configura o servidor Express, gerencia a conexão com o banco e expõe as rotas da API (ex: `/products`)
+- `db/schema.sql`: Contém os scripts SQL para criação da tabela de produtos e os dados iniciais
+- `.env`: (A ser criado pelo usuário) Gerencia as credenciais do banco de dados
 
-## Responsividade
+**Front-end:**
+- `index.html`: Concentra a estrutura principal da página
+- `css/`: Diretório com variáveis, estilos base, resets e componentes modulares
+- `js/main.js`: Faz a requisição (`fetch`) para a API local e renderiza os produtos
+- `js/classes.js`: Encapsula a criação dos elementos de produto
 
-O layout foi construído com abordagem mobile-first e ajustado com media queries para telas maiores. A estrutura visual prioriza a experiência em dispositivos móveis sem perder legibilidade e organização em desktop.
+## Como Executar Localmente
 
-## Estrutura do Projeto
+Para rodar o projeto completo na sua máquina, você precisará do **Node.js** e do **PostgreSQL** instalados.
 
-```text
-assets/
-|-- data/
-|   `-- products.json
-|-- images/
-css/
-|-- base.css
-|-- components.css
-|-- reset.css
-|-- utilities.css
-|-- variables.css
-`-- components/
-    |-- about.css
-    |-- contact.css
-    |-- footer.css
-    |-- header.css
-    |-- hero.css
-    `-- products.css
-js/
-|-- classes.js
-|-- main.js
-`-- menu.js
-index.html
-ROADMAP.md
-```
+### 1. Configurando o Banco de Dados
 
-## Como Executar
+1. Abra seu PostgreSQL (via pgAdmin ou terminal) e crie um banco de dados chamado `amigurumis_db` (ou o nome que preferir).
+2. Execute o conteúdo do arquivo `db/schema.sql` no seu banco de dados para criar a tabela `products` e popular com os amigurumis iniciais.
 
-Como o catálogo é carregado com `fetch()` a partir de `assets/data/products.json`, o projeto deve ser servido por um servidor local. Abrir o `index.html` diretamente no navegador pode falhar dependendo das restrições do ambiente.
+### 2. Configurando o Back-end (API)
 
-Você pode usar qualquer servidor estático simples. Exemplos:
+1. No terminal, acesse a pasta raiz do projeto e instale as dependências:
+   ```bash
+   npm install
+   ```
+2. Crie um arquivo chamado `.env` na raiz do projeto, baseado nas suas credenciais do banco de dados:
+   ```env
+   DB_USER=seu_usuario_do_postgres
+   DB_HOST=localhost
+   DB_DATABASE=amigurumis_db
+   DB_PASSWORD=sua_senha_do_postgres
+   DB_PORT=5432
+   ```
+3. Inicie o servidor:
+   ```bash
+   node server.js
+   ```
+   *O servidor rodará na porta 3000 (`http://localhost:3000`).*
 
+### 3. Executando o Front-end
+
+Com a API rodando, você precisa servir os arquivos estáticos do front-end. Em um **novo terminal** (na raiz do projeto), você pode rodar:
 ```bash
 npx serve .
 ```
+*(Ou, se preferir, abra o projeto via extensão **Live Server** no VS Code).*
 
-ou, se preferir a extensão Live Server no VS Code, basta iniciar o projeto por ela.
-
-Depois, abra no navegador o endereço exibido pelo servidor local.
+Pronto! Acesse o endereço gerado pelo servidor do front-end e veja a aplicação funcionando e consumindo os dados do seu banco PostgreSQL.
 
 ## Estado Atual
 
-Neste momento, o projeto funciona como um front-end estático com dados locais, já com melhorias recentes de semântica, acessibilidade e contraste visual. As próximas melhorias incluem:
+O projeto deu o seu primeiro passo no back-end, migrando os dados locais (JSON) para uma API Node.js conectada ao PostgreSQL. As próximas melhorias planejam a expansão dessa estrutura:
 
-- migração do catálogo para API + PostgreSQL
-- carrinho e registro de pedidos
-- painel administrativo com autenticação
+- Carrinho e registro de pedidos
+- Painel administrativo com autenticação (CRUD completo)
 
 ## Uso de IA no Processo
 
 A inteligência artificial tem sido usada como apoio prático durante a evolução do projeto, especialmente para:
 
-- revisar possibilidades de refatoração
-- identificar melhorias de semântica e acessibilidade
-- esclarecer decisões de estrutura e organização do código
-- acelerar o processo de aprendizado e evolução técnica
+- Revisar possibilidades de refatoração
+- Identificar melhorias de semântica e acessibilidade
+- Esclarecer decisões de estrutura e organização do código
+- Auxiliar na modelagem do banco de dados e arquitetura da API
 
-Esse apoio tem sido importante para tornar o desenvolvimento mais consciente e iterativo, ajudando a transformar o protótipo inicial em uma base mais sólida.
+Esse apoio tem sido importante para tornar o desenvolvimento mais consciente e iterativo, ajudando a transformar o protótipo inicial em uma aplicação full-stack sólida.
 
 ## Em Desenvolvimento
 
@@ -107,7 +107,6 @@ O plano de evolução do projeto está documentado em [ROADMAP.md](./ROADMAP.md)
 
 - Parte do conteúdo visual e textual foi gerada com apoio de IA para fins de prototipação
 - A IA também vem sendo utilizada como apoio técnico no processo de revisão e melhoria do projeto
-- O projeto ainda está em fase de melhoria estrutural antes da expansão para back-end
 
 ---
 
