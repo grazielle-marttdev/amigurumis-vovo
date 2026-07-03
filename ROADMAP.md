@@ -86,19 +86,19 @@
 
 ### 🔌 API REST
 
-- [ ] Criar servidor Express básico (`server.js`)
-- [ ] Criar rota `GET /products` — retorna todos os produtos
-- [ ] Criar rota `GET /products/:id` — retorna um produto específico
-- [ ] Testar as rotas com [Insomnia](https://insomnia.rest/) ou [Thunder Client](https://www.thunderclient.com/) (extensão VS Code)
-- [ ] Definir um formato de resposta consistente para facilitar a evolução do front-end
+- [X] Criar servidor Express básico (`server.js`)
+- [X] Criar rota `GET /products` — retorna todos os produtos
+- [X] Criar rota `GET /products/:id` — retorna um produto específico
+- [X] Testar as rotas com [Insomnia](https://insomnia.rest/) ou [Thunder Client](https://www.thunderclient.com/) (extensão VS Code)
+- [X] Definir um formato de resposta consistente para facilitar a evolução do front-end
 
 ### 🔗 Integração com o front-end
 
-- [ ] Substituir a leitura do `products.json` pelo consumo da API de produtos
-- [ ] Centralizar a URL base da API para facilitar ambiente local e futuro deploy
-- [ ] Garantir que o comportamento visual do site permanece igual
-- [ ] Tratar erros de rede de forma elegante (o que mostrar se a API falhar?)
-- [ ] Validar manualmente o fluxo completo: API disponível, listagem carregada e fallback em caso de erro
+- [X] Substituir a leitura do `products.json` pelo consumo da API de produtos
+- [X] Centralizar a URL base da API para facilitar ambiente local e futuro deploy
+- [X] Garantir que o comportamento visual do site permanece igual
+- [X] Tratar erros de rede de forma elegante (o que mostrar se a API falhar?)
+- [X] Validar manualmente o fluxo completo: API disponível, listagem carregada e fallback em caso de erro
 
 ---
 
