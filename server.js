@@ -39,13 +39,25 @@ app.get('/products', async (req, res) => {
         const result = await pool.query('SELECT * FROM products ORDER BY name ASC');
 
         // Retorna o status 200 (Sucesso) e envia os dados (rows) em formato JSON.
-        return res.status(200).json(result.rows);
+        return res.status(200).json({
+            success: true,
+            message: "Produtos listados com sucesso!",
+            data: result.rows
+        });
     } catch (error) {
         // Se houver algum erro durante a consulta, capturamos e mostramos o erro no terminal do servidor...
         console.error('Erro ao buscar produtos:', error);
         
         //...e enviamos um status 500 (Erro Interno do Servidor) com uma mensagem em formato JSON
-        return res.status(500).json({ error: 'Erro ao buscar produtos no banco de dados' });
+        return res.status(500).json({
+            success: false,
+            data: null,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "Erro ao buscar produtos no banco de dados.",
+                details: error.message
+            }
+        });
     }
 });
 
@@ -62,14 +74,33 @@ app.get('/products/:id', async (req, res) => {
 
         // O result.rows é um array. Se não tiver nenhum item nele (comprimento 0), o produto não existe
         if (result.rows.length === 0) {
-            return res.status(404).json({ error: 'Produto não encontrado.' });
+            return res.status(404).json({
+                success: false,
+                data: null,
+                error: {
+                    code: "NOT_FOUND",
+                    message: "Produto não encontrado."
+                }
+            });
         }
 
         // Se o produto existir, retornamos a primeira posição do array (o produto encontrado)
-        return res.status(200).json(result.rows[0]);
+        return res.status(200).json({
+            success: true,
+            message: "Produto encontrado com sucesso!",
+            data: result.rows[0]
+        });
     } catch (error) {
         console.error(`Erro ao buscar o produto de ID ${id}:`, error);
-        return res.status(500).json({ error: 'Erro ao buscar o produto.' });
+        return res.status(500).json({
+            success: false,
+            data: null,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "Erro ao buscar produtos no banco de dados.",
+                details: error.message
+            }
+        });
     }
 });
 
