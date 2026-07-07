@@ -1,7 +1,7 @@
-# 🧶 Amigurumis da Vovó — Roadmap v2.0
+# 🧶 Amigurumis da Vovó — Roadmap v3.0
 
 > Documento vivo. Atualizar à medida que tarefas forem concluídas.  
-> Última atualização: abril/2025
+> Última atualização: julho/2026
 
 ---
 
@@ -102,11 +102,20 @@
 
 ---
 
-## Fase 2 — Carrinho de compras + pedidos
+## Fase 2 — Catálogo aprimorado, carrinho de compras e pedidos
 
-> **Objetivo:** Permitir que o cliente monte um pedido antes de entrar em contato via WhatsApp — e registrar esse pedido no banco.
+> **Objetivo:** Enriquecer o catálogo com categorias e disponibilidade, implementar o carrinho de compras e registrar pedidos no banco antes de redirecionar ao WhatsApp.
 
-### Front-end
+### 🏷️ Categorias e disponibilidade (banco + front-end)
+
+- [ ] Adicionar campo `category` na tabela `products` (ex: `amigurumi`, `chaveiro`, `fios_linhas`, `agulhas`, `acessorios`, `kit`)
+- [ ] Adicionar campo `availability` na tabela `products` (ex: `in_stock`, `on_demand`)
+- [ ] Atualizar `schema.sql` com os novos campos e dados iniciais
+- [ ] Exibir a categoria e o status de disponibilidade nos cards de produto
+- [ ] Implementar filtro por categoria no front-end (botões ou dropdown)
+- [ ] Atualizar rota `GET /products` para aceitar filtro por categoria (query param: `?category=amigurumi`)
+
+### 🛒 Carrinho de compras (front-end)
 
 - [ ] Criar componente de carrinho em JS puro (boa oportunidade de praticar classes!)
 - [ ] Botão "Adicionar ao carrinho" em cada produto
@@ -115,7 +124,7 @@
 - [ ] Definir o fluxo oficial de checkout: salvar o pedido no banco antes de redirecionar para o WhatsApp
 - [ ] Botão "Finalizar pedido via WhatsApp" — gera mensagem automática com os itens e referência do pedido
 
-### Back-end
+### 📦 Pedidos (back-end)
 
 - [ ] Criar tabela `orders` (`id`, `status`, `created_at`, `whatsapp_number`)
 - [ ] Criar tabela `order_items` (`id`, `order_id`, `product_id`, `quantity`, `unit_price`)
@@ -126,21 +135,32 @@
 
 ---
 
-## Fase 3 — Painel admin
+## Fase 3 — Autenticação e painel admin
 
-> **Objetivo:** Interface para gerenciar produtos e visualizar pedidos sem precisar tocar no código ou no banco diretamente, já com acesso protegido.
+> **Objetivo:** Implementar autenticação tanto para o admin (gerenciar loja) quanto para clientes (acompanhar pedidos), e criar o painel administrativo.
 
-### Autenticação mínima do admin
+### 🔐 Autenticação (base compartilhada)
 
 - [ ] Instalar `bcrypt` e `jsonwebtoken`
-- [ ] Criar tabela `users` (simples: só email e senha hash)
+- [ ] Criar tabela `users` (`id`, `email`, `password_hash`, `name`, `role`, `created_at`)
+  - `role`: `admin` ou `customer`
+- [ ] Criar rota `POST /auth/register` — cadastro de clientes (com validação de email e senha segura)
 - [ ] Criar rota `POST /auth/login` — valida credenciais e retorna JWT
-- [ ] Proteger as rotas do admin com middleware de autenticação
-- [ ] Criar tela de login simples para o painel
+- [ ] Criar middleware de autenticação (verificação de JWT)
+- [ ] Criar middleware de autorização por role (admin vs. customer)
 
-### Interface e operações
+### 👤 Área do cliente (front-end)
+
+- [ ] Criar tela de cadastro e login para clientes
+- [ ] Exibir área logada no header (nome do usuário, link para "Minha Conta")
+- [ ] Página "Minha Conta" com histórico de pedidos do cliente
+- [ ] Criar rota `GET /orders/my` — retorna pedidos do cliente autenticado
+
+### 🛠️ Painel admin
 
 - [ ] Criar página `admin/index.html` separada
+- [ ] Criar tela de login para o admin
+- [ ] Proteger as rotas do admin com middleware de autorização (`role: admin`)
 - [ ] Listagem de produtos com opções de editar e excluir
 - [ ] Formulário para adicionar novo produto
 - [ ] Listagem de pedidos recebidos com status
@@ -165,6 +185,51 @@
 - [ ] Padronizar tratamento de erros da API para facilitar manutenção e depuração
 - [ ] Revisar variáveis de ambiente e configuração do projeto para ambiente local e futuro deploy
 - [ ] Criar um checklist de validação final antes de publicar novas versões
+
+---
+
+## 🔮 Melhorias futuras
+
+> Funcionalidades identificadas a partir de pesquisa de mercado e referências de lojas artesanais (Fofurumi, Amigu Online, Armarinho São José, Do Chão Artes). Não são prioridade imediata, mas ficam documentadas para não se perderem.
+
+### 🔍 Busca e navegação
+
+- [ ] Barra de pesquisa no header (buscar por nome/descrição do produto)
+- [ ] Rota `GET /products?search=...` para busca no back-end
+
+### ⭐ Prova social e confiança
+
+- [ ] Seção de depoimentos/avaliações na landing page
+- [ ] Sinais de confiança no footer (ícones de meios de pagamento aceitos, selo de segurança)
+- [ ] Informações de parcelamento (ex: "parcele em até 3x sem juros" — mesmo que visual por enquanto)
+
+### 📄 Conteúdo institucional
+
+- [ ] Página ou seção de FAQ (perguntas frequentes sobre encomendas, prazos, materiais)
+- [ ] Informações de frete e entrega (texto explicativo ou futura integração com Correios/Melhor Envio)
+- [ ] Footer completo: formas de pagamento, contato, formas de envio e redes sociais
+
+### 📸 Detalhes do produto
+
+- [ ] Múltiplas fotos por produto (tabela `product_images` ou galeria simples)
+- [ ] Informações de tamanho/medidas nos produtos (altura, material do fio)
+- [ ] Página individual do produto com detalhes expandidos
+
+### 🛍️ Variedade do catálogo
+
+- [ ] Expandir para além de amigurumis: fios e linhas, agulhas, chaveiros, acessórios, kits
+- [ ] Navegação visual por categorias na landing page (carrossel de categorias com ícones, estilo Armarinho São José)
+
+### 📬 Engajamento com o cliente
+
+- [ ] Notificações de produtos novos para clientes cadastrados (via email ou WhatsApp)
+- [ ] Newsletter simples ou lista de interesses
+- [ ] Opção "Quero ver novidades!" na área do cliente (inspirado na Fofurumi)
+
+### 💳 Pagamento
+
+- [ ] Exibição de opções de parcelamento por produto
+- [ ] Futura integração com gateway de pagamento (Mercado Pago, Stripe, etc.)
 
 ---
 
