@@ -34,9 +34,19 @@ const pool = new Pool({
 // Rota GET /products: retorna a lista de todos os produtos ativos do banco
 app.get('/products', async (req, res) => {
     try {
-        // Executa uma consulta SQL no banco de dados
-        // Ordenamos por "name" para a listagem vir sempre organizada
-        const result = await pool.query('SELECT * FROM products ORDER BY name ASC');
+        // Pegamos a categoria da URL (se existir)
+        const category = req.query.category;
+
+        let result; // variável para guardar o resultado do banco
+
+        // Verificamos: o usuário passou alguma categoria?
+        if (category) {
+            // Se passou, filtramos usando o WHERE 
+            result = await pool.query('SELECT * FROM products WHERE category = $1 ORDER BY name ASC', [category]);  
+        } else {
+            // Se não passou, mostramos todos (comportamento padrão)
+            result = await pool.query('SELECT * FROM products ORDER BY name ASC');
+        }
 
         // Retorna o status 200 (Sucesso) e envia os dados (rows) em formato JSON.
         return res.status(200).json({
@@ -46,7 +56,7 @@ app.get('/products', async (req, res) => {
         });
     } catch (error) {
         // Se houver algum erro durante a consulta, capturamos e mostramos o erro no terminal do servidor...
-        console.error('Erro ao buscar produtos:', error);
+        console.error('Erro ao buscar produtos:', error); 
         
         //...e enviamos um status 500 (Erro Interno do Servidor) com uma mensagem em formato JSON
         return res.status(500).json({

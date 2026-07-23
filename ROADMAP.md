@@ -108,12 +108,12 @@
 
 ### 🏷️ Categorias e disponibilidade (banco + front-end)
 
-- [ ] Adicionar campo `category` na tabela `products` (ex: `amigurumi`, `chaveiro`, `fios_linhas`, `agulhas`, `acessorios`, `kit`)
-- [ ] Adicionar campo `availability` na tabela `products` (ex: `in_stock`, `on_demand`)
-- [ ] Atualizar `schema.sql` com os novos campos e dados iniciais
-- [ ] Exibir a categoria e o status de disponibilidade nos cards de produto
-- [ ] Implementar filtro por categoria no front-end (botões ou dropdown)
-- [ ] Atualizar rota `GET /products` para aceitar filtro por categoria (query param: `?category=amigurumi`)
+- [X] Adicionar campo `category` na tabela `products` (ex: `amigurumi`, `chaveiro`, `fios_linhas`, `agulhas`, `acessorios`, `kit`)
+- [X] Adicionar campo `availability` na tabela `products` (ex: `in_stock`, `on_demand`)
+- [X] Atualizar `schema.sql` com os novos campos e dados iniciais
+- [X] Exibir a categoria e o status de disponibilidade nos cards de produto
+- [X] Implementar filtro por categoria no front-end (botões ou dropdown)
+- [X] Atualizar rota `GET /products` para aceitar filtro por categoria (query param: `?category=amigurumi`)
 
 ### 🛒 Carrinho de compras (front-end)
 
