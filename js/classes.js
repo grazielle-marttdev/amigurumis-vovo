@@ -6,6 +6,7 @@ class cardProdutos {
         this.desc = produto.description;
         this.alt = produto.alt;
         this.preco = produto.price;
+        this.disponibilidade = produto.availability;
     }
 
     gerarElemento() {
@@ -17,6 +18,26 @@ class cardProdutos {
         const imagem = document.createElement('img');
         imagem.src = this.img;
         imagem.alt = this.alt;
+
+        // Disponibilidade do produto
+        const textoDisponibilidade = this.disponibilidade === 'in_stock' ? 'Em estoque' : 'Sob encomenda';
+
+        // Criar contêiner de informações (preço e disponibilidade)
+        const infoContainer = document.createElement('div');
+        infoContainer.classList.add('info-container');
+
+        const disponibilidadeSpan = document.createElement('span');
+        disponibilidadeSpan.classList.add('card-disponibilidade');
+        disponibilidadeSpan.innerText = textoDisponibilidade;
+
+        // Criar o elemento do preço e colocar no botão container
+        const precoSpan = document.createElement('span');
+        precoSpan.classList.add('card-price');
+        precoSpan.innerText = `R$ ${this.preco}`;
+
+        // Colocando o preço dentro do contêiner antes do botão
+        infoContainer.appendChild(disponibilidadeSpan);
+        infoContainer.appendChild(precoSpan);
 
         // Criar conteúdo do card
         const conteudo = document.createElement('div');
@@ -31,14 +52,6 @@ class cardProdutos {
         const botaoContainer = document.createElement('div');
         botaoContainer.classList.add('btn-container');
 
-        // Criar o elemento do preço e colocar no botão container
-        const precoSpan = document.createElement('span');
-        precoSpan.classList.add('card-price');
-        precoSpan.innerText = `R$ ${this.preco}`;
-
-        // Colocando o preço dentro do contêiner antes do botão
-        botaoContainer.appendChild(precoSpan);
-
         // Configurando o link do Whatsapp
         const numeroLoja = "5511999999999";
         const textoMensagem = `Olá, tenho interesse no amigurumi ${this.nome}!`
@@ -50,6 +63,7 @@ class cardProdutos {
         link.textContent = "Quero esse amigurumi";
 
         // Colocando o botão dentro do contêiner também
+        botaoContainer.appendChild(infoContainer);
         botaoContainer.appendChild(link);
 
         // Montar o card final
