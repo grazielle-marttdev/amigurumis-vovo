@@ -117,12 +117,12 @@
 
 ### 🛒 Carrinho de compras (front-end)
 
-- [ ] Criar componente de carrinho em JS puro (boa oportunidade de praticar classes!)
-- [ ] Botão "Adicionar ao carrinho" em cada produto
-- [ ] Ícone de carrinho no header com contador de itens
-- [ ] Painel lateral (ou modal) mostrando os itens e o total
-- [ ] Definir o fluxo oficial de checkout: salvar o pedido no banco antes de redirecionar para o WhatsApp
-- [ ] Botão "Finalizar pedido via WhatsApp" — gera mensagem automática com os itens e referência do pedido
+- [X] Criar componente de carrinho em JS puro (boa oportunidade de praticar classes!)
+- [X] Botão "Adicionar ao carrinho" em cada produto
+- [X] Ícone de carrinho no header com contador de itens
+- [X] Painel lateral (ou modal) mostrando os itens e o total
+- [X] Definir o fluxo oficial de checkout: salvar o pedido no banco antes de redirecionar para o WhatsApp
+- [X] Botão "Finalizar pedido via WhatsApp" — gera mensagem automática com os itens e referência do pedido
 
 ### 📦 Pedidos (back-end)
 
