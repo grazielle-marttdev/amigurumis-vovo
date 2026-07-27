@@ -94,11 +94,9 @@
 .btn-container {
     padding: 0 1rem 1rem 1rem;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
     margin-top: auto;
 }
 
