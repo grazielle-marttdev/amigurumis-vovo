@@ -42,6 +42,7 @@ function abrirCarrinho() {
     sidebar.classList.add('open');
     overlay.classList.add('open');
     sidebar.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden'; // bloqueia o scroll do site
     btnFecharCarrinho.focus();  // leva o foco para dentro do painel
     document.addEventListener('keydown', trapFocus); // ativa o focus trap
 }
@@ -51,6 +52,7 @@ function fecharCarrinho() {
     sidebar.classList.remove('open');
     overlay.classList.remove('open');
     sidebar.setAttribute('aria-hidden', 'true'); // esconde do leitor quando fechado
+    document.body.style.overflow = ''; // desbloqueia o scroll do site
     btnAbrirCarrinho.focus(); // devolve o foco para o botão principal
     document.removeEventListener('keydown', trapFocus); // desativa o focus trap
 }
