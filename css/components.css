@@ -4,6 +4,7 @@
 @import url('components/header.css');
 @import url('components/hero.css');
 @import url('components/products.css');
+@import url('components/cart.css');
 
 /* Estilização de Botões */
 .btn {
@@ -12,6 +13,7 @@
     text-align: center;
     font-weight: 500;
     padding: 8px;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -21,7 +23,8 @@
     background-color: var(--soft-terracota);
 }
 
-.btn:focus-visible {
+.btn:focus-visible,
+.btn-filter:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px var(--cozy-brown);    
 }

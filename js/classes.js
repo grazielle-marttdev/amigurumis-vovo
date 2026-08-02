@@ -1,3 +1,5 @@
+import { adicionarAoCarrinho } from "./cart.js";
+
 class cardProdutos {
     constructor(produto) {
         // guarda as informações
@@ -48,23 +50,31 @@ class cardProdutos {
             <p class="card-description">${this.desc}</p>
         `;
 
-        // Criar o botão de Whatsapp e o contêiner
+        // Criar o botão de Adicionar ao carrinho e o contêiner
         const botaoContainer = document.createElement('div');
         botaoContainer.classList.add('btn-container');
 
-        // Configurando o link do Whatsapp
-        const numeroLoja = "5511999999999";
-        const textoMensagem = `Olá, tenho interesse no amigurumi ${this.nome}!`
+        const botaoAdicionar = document.createElement('button');
+        botaoAdicionar.classList.add('btn', 'card');
+        botaoAdicionar.textContent = "Adicionar ao carrinho";
 
-        const link = document.createElement('a');
-        link.href = `https://api.whatsapp.com/send?phone=${numeroLoja}&text=${encodeURIComponent(textoMensagem)}`
-        link.target = "_blank";
-        link.classList.add('btn', 'card');
-        link.textContent = "Quero esse amigurumi";
+        // Adicionando um "ouvinte" de clique no botão
+        botaoAdicionar.addEventListener('click', () => {
+            // Cria um "mini produto" só com o que importa pro carrinho
+            const produtoSelecionado = {
+                nome: this.nome,
+                preco: this.preco,
+                img: this.img,
+                alt: this.alt
+            };
+
+            // Chama a função do carrinho
+            adicionarAoCarrinho(produtoSelecionado);
+        })
 
         // Colocando o botão dentro do contêiner também
         botaoContainer.appendChild(infoContainer);
-        botaoContainer.appendChild(link);
+        botaoContainer.appendChild(botaoAdicionar);
 
         // Montar o card final
         card.appendChild(imagem);

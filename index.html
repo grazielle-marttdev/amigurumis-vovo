@@ -21,11 +21,19 @@
             <h1>
                 <a href="/" title="Amigurumis da Vovó">Amigurumis da Vovó</a>
             </h1>
-    
-            <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
-                <i class="fa-solid fa-bars " aria-hidden="true"></i>
-                <i class="fa-solid fa-xmark hide" aria-hidden="true"></i>
-            </button>
+
+            <div class="header-actions">
+                <button class="cart-toggle" id="cart-toggle-btn" aria-label="Abrir carrinho">
+                    <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                    <span class="cart-counter" id="cart-counter">0</span>
+                </button>
+        
+                <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
+                    <i class="fa-solid fa-bars " aria-hidden="true"></i>
+                    <i class="fa-solid fa-xmark hide" aria-hidden="true"></i>
+                </button>
+            </div>
+
         </div>
 
         <nav class="nav-container hide" id="main-nav" aria-label="Menu de navegação principal">
@@ -34,7 +42,15 @@
                 <li><a href="#sobre" class="nav-link" aria-label="Ir para a seção sobre">Sobre</a></li>
                 <li><a href="#contato" class="nav-link" aria-label="Ir para a seção contato">Contato</a></li>
                 <li>
-                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." class="btn whatsapp header" target="_blank" aria-label="Chamar no Whatsapp" rel="noopener noreferrer">Whatsapp</a>
+                    <a 
+                        href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." 
+                        class="btn whatsapp header"
+                        target="_blank" 
+                        aria-label="Chamar no Whatsapp" 
+                        rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Whatsapp
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -49,7 +65,12 @@
                 <h2 class="hero-title">Amigurumis da Vovó</h2>
                 <span class="hero-span">Carinho em cada ponto</span>
                 <p class="hero-subtitle">Feitos à mão por Antônia. Peças únicas para presentear quem você ama.</p>
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." class="btn whatsapp hero" target="_blank" rel="noopener noreferrer">Pedir pelo Whatsapp</a>
+                <a 
+                    href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." 
+                    class="btn whatsapp hero" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Pedir pelo Whatsapp
+                </a>
             </div>
         </section>
 
@@ -90,7 +111,14 @@
             <h2 class="contact-title section-title">Vamos conversar?</h2>
             <p class="contact-subtitle">Cada peça pode ser personalizada com as cores e detalhes que você preferir. Entre em contato e vamos criar algo especial juntos!</p>
 
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." class="btn whatsapp contact" target="_blank" rel="noopener noreferrer">Chamar no Whatsapp</a>
+            <a 
+                href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20de%20amigurumi." 
+                class="btn whatsapp contact" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Chamar no Whatsapp
+            </a>
 
             <div class="contact-info">
                 <div class="local">
@@ -111,9 +139,36 @@
         <span>&copy; 2025 Amigurumis da Vovó. Todos os direitos reservados.</span>
         <span>Artesanato brasileiro • Produção familiar • Comércio local</span>
     </footer>
+
+    <!-- Painel Lateral do Carrinho -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu carrinho</h2>
+            <button class="close-cart" id="close-cart-btn" aria-label="Fechar carrinho">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+            <p style='text-align: center; color: gray; margin-top: 2rem;'>Seu carrinho está vazio 🧶</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+            <button class="btn whatsapp cart-checkout" id="checkout-btn" aria-label="Finalizar pedido pelo Whatsapp">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Finalizar pedido pelo Whatsapp
+            </button>
+        </div>
+    </aside>
 </body>
 
 <script src="./js/menu.js"></script>
+<script type="module" src="./js/cart.js"></script>
 <script type="module" src="./js/main.js"></script>
 
 </html>
