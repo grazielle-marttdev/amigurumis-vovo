@@ -235,7 +235,7 @@ btnCheckout.addEventListener('click', async () => {
     
         // O navegador precisa "codificar" o texto para poder enviar em um link
         const textoCodificado = encodeURIComponent(textoMensagem); 
-        const numeroLoja = "5561992017308";
+        const numeroLoja = "5561999999999";
 
         // Limpa o carrinho (que já foi salvo no banco)
         itensDoCarrinho = [];
