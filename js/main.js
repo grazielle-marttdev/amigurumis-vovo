@@ -91,4 +91,10 @@ botoesFiltro.forEach(botao => {
     })
 })
 
+// Adiciona redirecionamento para a página de login
+const btnLogin = document.getElementById('login-btn');
+btnLogin.addEventListener('click', () => {
+    window.location.href = 'auth/login.html';
+});
+
 iniciar();
