@@ -5,6 +5,7 @@
 @import url('components/hero.css');
 @import url('components/products.css');
 @import url('components/cart.css');
+@import url('components/auth.css');
 
 /* Estilização de Botões */
 .btn {
@@ -14,7 +15,7 @@
     font-weight: 500;
     padding: 8px;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
