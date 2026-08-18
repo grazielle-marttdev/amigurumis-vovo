@@ -22,6 +22,7 @@ A aplicação é full-stack: possui catálogo de produtos com filtro por categor
 - `HTML5` para a estrutura da página
 - `CSS3` organizado em arquivos base, utilitários, variáveis e componentes
 - `JavaScript` modular, consumindo a API e gerenciando o carrinho com classes
+- `JustValidate` para a validação de formulários no front-end
 - `Font Awesome` para ícones da interface
 - `Google Fonts` para tipografia
 
