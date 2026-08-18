@@ -126,12 +126,12 @@
 
 ### 📦 Pedidos (back-end)
 
-- [ ] Criar tabela `orders` (`id`, `status`, `created_at`, `whatsapp_number`)
-- [ ] Criar tabela `order_items` (`id`, `order_id`, `product_id`, `quantity`, `unit_price`)
-- [ ] Criar rota `POST /orders` — salva o pedido e seus itens
-- [ ] Criar rota `GET /orders` — lista todos os pedidos (para o admin, na fase seguinte)
-- [ ] Garantir que o total do pedido seja calculado com base nos valores persistidos no back-end
-- [ ] Validar manualmente criação de pedido, persistência dos itens e geração da mensagem final do WhatsApp
+- [X] Criar tabela `orders` (`id`, `status`, `created_at`, `whatsapp_number`)
+- [X] Criar tabela `order_items` (`id`, `order_id`, `product_id`, `quantity`, `unit_price`)
+- [X] Criar rota `POST /orders` — salva o pedido e seus itens
+- [X] Criar rota `GET /orders` — lista todos os pedidos (para o admin, na fase seguinte)
+- [X] Garantir que o total do pedido seja calculado com base nos valores persistidos no back-end
+- [X] Validar manualmente criação de pedido, persistência dos itens e geração da mensagem final do WhatsApp
 
 ---
 
@@ -141,17 +141,17 @@
 
 ### 🔐 Autenticação (base compartilhada)
 
-- [ ] Instalar `bcrypt` e `jsonwebtoken`
-- [ ] Criar tabela `users` (`id`, `email`, `password_hash`, `name`, `role`, `created_at`)
+- [X] Instalar `bcrypt` e `jsonwebtoken`
+- [X] Criar tabela `users` (`id`, `email`, `password_hash`, `name`, `role`, `created_at`)
   - `role`: `admin` ou `customer`
-- [ ] Criar rota `POST /auth/register` — cadastro de clientes (com validação de email e senha segura)
-- [ ] Criar rota `POST /auth/login` — valida credenciais e retorna JWT
-- [ ] Criar middleware de autenticação (verificação de JWT)
-- [ ] Criar middleware de autorização por role (admin vs. customer)
+- [X] Criar rota `POST /auth/register` — cadastro de clientes (com validação de email e senha segura)
+- [X] Criar rota `POST /auth/login` — valida credenciais e retorna JWT
+- [X] Criar middleware de autenticação (verificação de JWT)
+- [X] Criar middleware de autorização por role (admin vs. customer)
 
 ### 👤 Área do cliente (front-end)
 
-- [ ] Criar tela de cadastro e login para clientes
+- [X] Criar tela de cadastro e login para clientes
 - [ ] Exibir área logada no header (nome do usuário, link para "Minha Conta")
 - [ ] Página "Minha Conta" com histórico de pedidos do cliente
 - [ ] Criar rota `GET /orders/my` — retorna pedidos do cliente autenticado

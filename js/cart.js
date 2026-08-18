@@ -88,6 +88,8 @@ export function adicionarAoCarrinho(produto) {
     const contador = document.getElementById('cart-counter');
     contador.innerText = itensDoCarrinho.length;
 
+    salvarCarrinho();
+
     atualizarCarrinhoHTML();
     abrirCarrinho();
 }
@@ -141,6 +143,7 @@ function atualizarCarrinhoHTML() {
         btnRemover.addEventListener('click', () => {
             itensDoCarrinho.splice(index, 1);
             document.getElementById('cart-counter').innerText = itensDoCarrinho.length;
+            salvarCarrinho();
             atualizarCarrinhoHTML();
         });
 
@@ -155,37 +158,127 @@ function atualizarCarrinhoHTML() {
 }
 
 // ==========================================
-// FINALIZAR PEDIDO (WHATSAPP)
+// FINALIZAR PEDIDO (SALVAR + WHATSAPP)
 // ==========================================
 
 const btnCheckout = document.getElementById('checkout-btn');
 
-btnCheckout.addEventListener('click', () => {
+btnCheckout.addEventListener('click', async () => {
     // Previne que a pessoa mande mensagem sem ter comprado nada
     if (itensDoCarrinho.length === 0) {
         alert("Seu carrinho está vazio! Adicione alguns produtos primeiro 🧶");
         return;
     }
 
-    // Monta a mensagem do WhatsApp
-    let textoMensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
-    let valorTotal = 0;
+    // Verifica se o usuário está logado (tem token no localStorage?)
+    const token = localStorage.getItem('token');
 
-    // Passamos pela lista adicionando o nome e preço de cada item
-    itensDoCarrinho.forEach((produto, index) => {
-        textoMensagem += `${produto.nome} (R$ ${produto.preco})\n`;
-        valorTotal += Number(produto.preco);
-    });
+    if (!token) {
+        // Salvar um sinal para saber que, depois de logar, ele quer finalizar o pedido
+        localStorage.setItem('pendingCheckout', 'true');
 
-    // Coloca o total no final, em negrito (usando os asteriscos do WhatsApp)
-    textoMensagem += `\n*Total estimado: R$ ${valorTotal.toFixed(2).replace('.', ',')}*`;
-    textoMensagem += `\n\nAguardo o retorno para combinarmos o pagamento e a entrega!`;
+        alert('Para finalizar seu pedido, você precisa criar uma conta ou fazer login 🧶');
+        window.location.href = 'auth/login.html';
+        return;  
+    }
 
-    // O navegador precisa "codificar" o texto para poder enviar em um link
-    const textoCodificado = encodeURIComponent(textoMensagem); 
+    // Está logado, então monta os itens no formato que o backend espera
+    const items = itensDoCarrinho.map(produto => ({
+        productId: produto.id,
+        quantity: 1,
+        unitPrice: produto.preco
+    }));
 
-    const numeroLoja = "5511999999999";
+    try {
+        // Envia o pedido pro backend
+        const response = await fetch('http://localhost:3000/orders', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // envia o token para provar que está logado
+            },
+            body: JSON.stringify({ items })
+        });
 
-    // Abre a aba do WhatsApp Web / App
-    window.open(`https://wa.me/${numeroLoja}?text=${textoCodificado}`, '_blank');
-})
+        const result = await response.json();
+
+        if (!result.success) {
+            // Se o token expirou ou é inválido, redireciona para o login
+            if (result.error.code === 'INVALID_TOKEN') {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                localStorage.setItem('pendingCheckout', 'true');
+                alert('Sua sessão expirou. Faça login novamente para concluir o pedido 🧶');
+                window.location.href = 'auth/login.html';
+                return;
+            }
+
+            alert(result.error.message);
+            return;
+        }
+
+        // Pedido salvo, agora é montar a mensagem do WhatsApp
+        const user = JSON.parse(localStorage.getItem('user'));
+        let textoMensagem = `Olá! Meu nome é ${user.name} e gostaria de fazer o seguinte pedido:\n\n`;
+        let valorTotal = 0;
+    
+        // Passamos pela lista adicionando o nome e preço de cada item
+        itensDoCarrinho.forEach(produto => {
+            textoMensagem += `${produto.nome} (R$ ${produto.preco})\n`;
+            valorTotal += Number(produto.preco);
+        });
+    
+        // Coloca o total no final, em negrito (usando os asteriscos do WhatsApp)
+        textoMensagem += `\n*Total estimado: R$ ${valorTotal.toFixed(2).replace('.', ',')}*`;
+        textoMensagem += `\n*Pedido nº ${result.data.orderId}*`
+        textoMensagem += `\n\nAguardo o retorno para combinarmos o pagamento e a entrega!`;
+    
+        // O navegador precisa "codificar" o texto para poder enviar em um link
+        const textoCodificado = encodeURIComponent(textoMensagem); 
+        const numeroLoja = "5561999999999";
+
+        // Limpa o carrinho (que já foi salvo no banco)
+        itensDoCarrinho = [];
+        salvarCarrinho();
+        document.getElementById('cart-counter').innerText = '0'; // Atualiza a bolinha no topo
+        atualizarCarrinhoHTML();
+        fecharCarrinho();
+    
+        // Abre a aba do WhatsApp Web / App
+        window.open(`https://wa.me/${numeroLoja}?text=${textoCodificado}`, '_blank');
+    } catch (error) {
+        console.error('Erro ao finalizar pedido', error);
+        alert('Erro ao finalizar pedido. Tente novamente.');
+    }
+});
+
+
+// ==========================================
+// SALVAR / CARREGAR CARRINHO DO LOCALSTORAGE
+// ==========================================
+
+// Função para salvar no localStorage para não perder quando trocar de página
+function salvarCarrinho() {
+    localStorage.setItem('carrinho', JSON.stringify(itensDoCarrinho));
+}
+
+// Carrega o carrinho do localStorage quando a página abre
+function carregarCarrinho() {
+    const carrinhoSalvo = JSON.parse(localStorage.getItem('carrinho'));
+
+    if (carrinhoSalvo) {
+        itensDoCarrinho = carrinhoSalvo;
+
+        // Atualiza o contador e o HTML do carrinho
+        document.getElementById('cart-counter').innerText = itensDoCarrinho.length;
+        atualizarCarrinhoHTML();
+    }
+
+    // Se o usuário acabou de logar para finalizar um pedido, abre o carrinho automaticamente
+    if (localStorage.getItem('openCart')) {
+        localStorage.removeItem('openCart');
+        abrirCarrinho();
+    }
+}
+
+carregarCarrinho();

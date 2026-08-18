@@ -128,3 +128,46 @@ insert into products (name, description, alt, price, image_url, is_active, categ
 ('Xangô', 'Amigurumi do Orixá Xangô, senhor da justiça, do fogo e das pedreiras. Uma peça forte e lindíssima, feita com riqueza de detalhes na roupagem vermelha e marrom, acompanhada de seu machado duplo (oxé). Perfeito para o seu altar ou decoração.', 'Amigurumi de Xangô com roupagem vermelha e marrom segurando um machado duplo sobre mesa de madeira.', 65.00, 'assets/images/produto-xango.png', true, 'amigurumi', 'on_demand'),
 ('Iemanjá', 'Amigurumi da Rainha do Mar, nossa mãe Iemanjá. Vestida em tons de azul e branco, usando uma coroa com detalhes e segurando seu espelho. Traz a tranquilidade e a força do oceano para perto de você.', 'Amigurumi de Iemanjá com vestido azul e coroa segurando um espelho na praia.', 70.00, 'assets/images/produto-iemanja.png', true, 'amigurumi', 'on_demand'),
 ('Casal de Pretos Velhos', 'Lindos amigurumis de um Preto Velho e uma Preta Velha, sentadinhos e trazendo toda a sabedoria, paz e aconchego das almas. Roupas ricas em detalhes de renda, colar de contas e cachimbo. Uma verdadeira obra de arte.', 'Amigurumi de Preto Velho e Preta Velha sentados juntos.', 110.00, 'assets/images/produto-pretos-velhos.png', true, 'amigurumi', 'on_demand');
+
+
+-- =============================
+-- Criando a tabelas users
+-- =============================
+
+create table users (
+    id serial primary key,
+    name varchar(100) not null,
+    email varchar(255) not null unique,
+    password_hash text not null,
+    role varchar(20) not null default 'customer'
+        check (role in ('admin', 'customer')),
+    is_active boolean not null default true,
+    created_at timestamp with time zone default current_timestamp,
+    updated_at timestamp with time zone default current_timestamp
+);
+
+
+-- =============================
+-- Criando a tabelas orders e order_items para armazenar os pedidos
+-- =============================
+
+create table orders (
+    id serial primary key,
+    user_id integer not null references users(id),
+    status varchar(20) not null default 'pending'
+        check (status in (
+            'pending', 'contacted', 'confirmed',
+            'in_production', 'ready', 'completed',
+            'cancelled'
+        )),
+    created_at timestamp with time zone default current_timestamp,
+    update_at timestamp with time zone default current_timestamp
+);
+
+create table order_items (
+    id serial primary key,
+    order_id integer not null references orders(id) on delete cascade,    
+    product_id integer not null references products(id) on delete restrict,
+    quantity integer not null check(quantity > 0),
+    unit_price decimal(10,2) not null check (unit_price >= 0)
+);

@@ -3,6 +3,7 @@ import { adicionarAoCarrinho } from "./cart.js";
 class cardProdutos {
     constructor(produto) {
         // guarda as informações
+        this.id = produto.id;
         this.img = produto.image_url;
         this.nome = produto.name;
         this.desc = produto.description;
@@ -62,6 +63,7 @@ class cardProdutos {
         botaoAdicionar.addEventListener('click', () => {
             // Cria um "mini produto" só com o que importa pro carrinho
             const produtoSelecionado = {
+                id: this.id,
                 nome: this.nome,
                 preco: this.preco,
                 img: this.img,
