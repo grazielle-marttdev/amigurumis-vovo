@@ -76,6 +76,15 @@ loginValidator
 
         // 4. Verificamos o resultado
         if (result.success) {
+            // Verifica se o usuário que está logando é diferente do anterior
+            const usuarioAnterior = JSON.parse(localStorage.getItem('user'));
+            const usuarioNovo = result.data.user;
+
+            if (usuarioAnterior && usuarioAnterior.id !== usuarioNovo.id) {
+                // É uma conta diferente: limpa o carrinho da conta anterior
+                localStorage.removeItem('carrinho');
+            }
+
             // Salvar o token e os dados do usuário no localStorage
             // Assim o navegador "lembra" que o usuário está logado
             localStorage.setItem('token', result.data.token);
@@ -85,9 +94,9 @@ loginValidator
             const pendingCheckout = localStorage.getItem('pendingCheckout');
 
             if (pendingCheckout) {
-                // Remover o sinal e voltar pro site para finalizar o pedido
+                // Remove o sinal do pedido pendente e sinaliza para abrir o carrinho
                 localStorage.removeItem('pendingCheckout');
-                alert('Login feito com sucesso! Agora você pode finalizar seu pedido 🧶');
+                localStorage.setItem('openCart', 'true');
                 window.location.href = '../index.html';
             } else {
                 // Login normal, vai para a página principal

@@ -203,6 +203,16 @@ btnCheckout.addEventListener('click', async () => {
         const result = await response.json();
 
         if (!result.success) {
+            // Se o token expirou ou é inválido, redireciona para o login
+            if (result.error.code === 'INVALID_TOKEN') {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                localStorage.setItem('pendingCheckout', 'true');
+                alert('Sua sessão expirou. Faça login novamente para concluir o pedido 🧶');
+                window.location.href = 'auth/login.html';
+                return;
+            }
+
             alert(result.error.message);
             return;
         }
@@ -262,6 +272,12 @@ function carregarCarrinho() {
         // Atualiza o contador e o HTML do carrinho
         document.getElementById('cart-counter').innerText = itensDoCarrinho.length;
         atualizarCarrinhoHTML();
+    }
+
+    // Se o usuário acabou de logar para finalizar um pedido, abre o carrinho automaticamente
+    if (localStorage.getItem('openCart')) {
+        localStorage.removeItem('openCart');
+        abrirCarrinho();
     }
 }
 
